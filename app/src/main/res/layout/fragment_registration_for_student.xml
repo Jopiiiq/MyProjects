@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/student_login_background"
+    tools:context=".RegistrationForStudentFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/blurImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+        <EditText
+            android:id="@+id/fullNameTextView"
+            android:layout_width="243dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:hint="Teljes név"
+            android:inputType="text"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/usernameTextView"
+            android:layout_width="243dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="120dp"
+            android:ems="10"
+            android:hint="Felhasználó név"
+            android:inputType="text"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/passwordTextView"
+            android:layout_width="243dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="200dp"
+            android:ems="10"
+            android:hint="Jelszo"
+            android:inputType="textPassword"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/checkPasswordTextView"
+            android:layout_width="243dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="272dp"
+            android:ems="10"
+            android:hint="Jelszo megerősitő"
+            android:inputType="textPassword"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/classYearSpinner"
+            android:layout_width="150dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="356dp"
+            android:layout_marginEnd="128dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonReg"
+            android:layout_width="150dp"
+            android:layout_height="68dp"
+            android:layout_marginBottom="9dp"
+            android:text="Regisztráció"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/groupSpinner"
+            android:layout_width="150dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="436dp"
+            android:layout_marginEnd="128dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

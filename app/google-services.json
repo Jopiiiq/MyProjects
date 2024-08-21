@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "765833237943",
+    "firebase_url": "https://allamvizsga-81936-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "allamvizsga-81936",
+    "storage_bucket": "allamvizsga-81936.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765833237943:android:6b3c21b634bf8043b54432",
+        "android_client_info": {
+          "package_name": "com.example.allamvizsga"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrOkLTh0h1yRwQF7CMQlis1g0KuGPQauw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765833237943:android:83f5d738e03c2be9b54432",
+        "android_client_info": {
+          "package_name": "com.example.allavizsga"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrOkLTh0h1yRwQF7CMQlis1g0KuGPQauw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

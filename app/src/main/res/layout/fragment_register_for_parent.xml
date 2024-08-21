@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterForParent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/blurImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
+
+
+        <EditText
+            android:id="@+id/parentUsername"
+            android:layout_width="247dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginTop="192dp"
+            android:layout_marginEnd="106dp"
+            android:ems="10"
+            android:hint="Felhasználó név"
+            android:inputType="text"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.351"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/parentFullName"
+            android:layout_width="247dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="104dp"
+            android:ems="10"
+            android:hint="Teljes név"
+            android:inputType="text"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/parentPassword"
+            android:layout_width="247dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="272dp"
+            android:ems="10"
+            android:hint="Jelszó"
+            android:inputType="text"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/childCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="376dp"
+            android:layout_marginEnd="100dp"
+            android:ems="10"
+            android:hint="Gyermek Kód"
+            android:inputType="text"
+            android:shadowColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/parentRegistration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="124dp"
+            android:layout_marginEnd="144dp"
+            android:layout_marginBottom="144dp"
+            android:text="Regisztráció"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
