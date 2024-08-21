@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    body {
+        background-image: url('{{ url_for('static', filename='icons/ip-search-background.jpg') }}');
+        
+    }
+</style>
+
+
+    <div class="ip-checker-button">
+        <button id='startButton'>Get Your IP</button>
+        <div id="loader" class="loader"></div> 
+ 
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('startButton').addEventListener('click', function() {
+            var button = document.getElementById('startButton');
+            var loader = document.getElementById('loader');
+    
+        
+            button.style.display = 'none';
+            loader.style.display = 'block'; 
+    
+            $.getJSON('/get_ip')
+                .done(function(data) {
+                  
+                    button.textContent = "Here is your IP: " + data.ip;
+                })
+                .fail(function() {
+                  
+                    button.textContent = 'Failed to fetch IP address.';
+                })
+                .always(function() {
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                        button.style.display = 'block';
+                        button.disabled=true;
+                    }, 3000); 
+                });
+        });
+    });
+
+</script>
+
+{% endblock %}

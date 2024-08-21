@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+    {% block content%}
+    <style>
+      body{
+        background-image: url('{{ url_for('static', filename='icons/background-before-weather-search.jpg') }}');
+        background-size:cover;
+        width:100%;
+       
+      }
+    </style>
+    <div class="container mt-5 center-div">
+        <form method="post" action="/predict_weather">
+            <div class="form-group"> 
+                <label for="location">Where Should We Look?</label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter location..." required>
+                <ul id="suggestions" class="list-group" ></ul>
+            </div>
+            <button type="submit" class="btn btn-primary">Let's have a look</button>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#location').on('input', function(){
+                let query = $(this).val();
+                if(query.length > 0){
+                    $.get('/location_suggestion', { query: query }, function(data) {
+                        $('#suggestions').empty();
+                        if(data.length > 0){
+                            $('#suggestions').show();
+                            data.forEach(function(location) {
+                                $('#suggestions').append('<li class="list-group-item suggestion">' + location + '</li>');
+                            });
+                        } else {
+                            $('#suggestions').hide();
+                        }
+                    });
+                } else {
+                    $('#suggestions').hide();
+                }
+            });
+
+            $(document).on('click', '.suggestion', function() {
+                $('#location').val($(this).text());
+                $('#suggestions').hide();
+            });
+        });
+    </script>
+
+    {% if name %}
+    <div class="mt-5">
+        <h2>Weather in {{ name }}, {{ region }}, {{ country }}</h2>
+      <div class="mt-6">
+        <div class="weather-info">
+        <p><strong>Temperature:</strong> {{ temp_c }}°C / {{ temp_f }}°F</p>
+        <p><strong>Condition:</strong> {{ condition_text }}</p>
+        <p><strong>Wind:</strong> {{ wind_mph }} mph / {{ wind_kph }} kph, Direction: {{ wind_dir }}</p>
+        <p><strong>Humidity:</strong> {{ humidity }}%</p>
+        <p><strong>Cloud:</strong> {{ cloud }}%</p>
+        <p><strong>Pressure:</strong> {{ pressure_mb }} mb / {{ pressure_in }} in</p>
+        <p><strong>Precipitation:</strong> {{ precip_mm }} mm / {{ precip_in }} in</p>
+        <p><strong>Feels like:</strong> {{ feelslike_c }}°C / {{ feelslike_f }}°F</p>
+        <p><strong>Visibility:</strong> {{ vis_km }} km / {{ vis_miles }} miles</p>
+        <p><strong>UV Index:</strong> {{ uv }}</p>
+        <p><strong>Gust:</strong> {{ gust_mph }} mph / {{ gust_kph }} kph</p>
+        </div>
+
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if error %}
+    <div class="mt-5 alert alert-danger">
+        {{ error }}
+    </div>
+    {% endif %}
+    {%endblock%}
+
+</body>
+</html>

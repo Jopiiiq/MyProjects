@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="login-menu">
+    <h1>Get in own you account</div>
+</div>
+
+<div class="tpye-of-movies">
+    <div class="items-of-types">
+        <ul>
+            <li>Movies</li>
+            <li>Series</li>
+            <li>Anime</li>
+        </ul>
+    </div>
+</div>
+<div class="list-of-movies-choosen">
+    <h1>Movies</h1>
+    <div class="list-of-movies">
+        <ul>
+        {% for movie in movies %}
+            <li>
+                <h2>{{ movie.title }}</h2>
+                <p>{{ movie.overview }}</p>
+                <p>Release Year: {{ movie.releaseYear }}</p>
+                <p>Genres: {{ movie.genres }}</p>
+                <p>Directors: {{ movie.directors }}</p>
+                <p>Cast: {{ movie.cast }}</p>
+                <img src="{{ url_for('static', filename='images/' ~ movie.imageSet) }}" alt="{{ movie.title }}">
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
